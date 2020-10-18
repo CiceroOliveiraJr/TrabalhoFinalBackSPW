@@ -1,9 +1,24 @@
 package com.lojaunit.base;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name = "marcas")
 public class Marca {
 
+	@Column
+	@NotNull
 	private Integer id;
+
+	@Column(length = 200)
+	@NotNull
 	private String nome;
+
+	@Column
 	private String descricao;
 
 	/**

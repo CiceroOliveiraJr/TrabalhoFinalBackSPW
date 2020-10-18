@@ -1,14 +1,44 @@
 package com.lojaunit.base;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name = "produto")
 public class Produto {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	@NotNull
 	private Integer id;
+
+	@Column(length = 200)
+	@NotNull
 	private String nome;
+
+	@Column
 	private String descricao;
+
+	@Column
 	private Double preco;
+
+	@Column(length = 20)
 	private Integer unidade;
+
+	@Column
 	private Categoria categoria;
+
+	@Column
 	private Fornecedor fornecedor;
+
+	@Column
 	private Marca marca;
 
 	/**
