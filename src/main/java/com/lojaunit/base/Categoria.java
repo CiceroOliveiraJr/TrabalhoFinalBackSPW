@@ -1,9 +1,29 @@
 package com.lojaunit.base;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table (name = "categoria")
 public class Categoria {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	@NotNull
 	private Integer id;
+
+	@Column(length = 200)
 	private String nome;
+
+	@Column
+	@NotNull
 	private boolean ativo;
 
 	/**

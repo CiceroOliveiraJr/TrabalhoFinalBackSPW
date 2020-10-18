@@ -1,10 +1,29 @@
 package com.lojaunit.base;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name = "itens_venda")
 public class ItensVenda {
 
+	@Column
+	@NotNull
 	private Venda venda;
+
+	@Column
+	@NotNull
 	private Produto produto;
+
+	@Column
+	@NotNull
 	private Integer quantidade;
+
+	@Column
+	@NotNull
 	private Double valorUnitario;
 
 	/**

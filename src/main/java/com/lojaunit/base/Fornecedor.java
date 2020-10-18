@@ -1,12 +1,38 @@
 package com.lojaunit.base;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table
 public class Fornecedor {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	@NotNull
 	private Integer id;
+
+	@Column(length = 200)
+	@NotNull
 	private String nome;
+
+	@Column
 	private String endereco;
+
+	@Column(length = 20)
 	private String telefone;
+
+	@Column(length = 20, unique = true)
 	private String cnpj;
+
+	@Column(length = 200)
 	private String email;
 
 	/**
